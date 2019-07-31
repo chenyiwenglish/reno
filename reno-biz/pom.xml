@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>reno-parent</artifactId>
+        <groupId>com.chenyiwenglish</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>reno-biz</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.chenyiwenglish</groupId>
+            <artifactId>reno-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.chenyiwenglish</groupId>
+            <artifactId>reno-dal</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
