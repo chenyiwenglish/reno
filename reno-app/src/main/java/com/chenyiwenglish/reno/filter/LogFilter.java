@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class LogFilter {
         Object[] args = joinPoint.getArgs();
         String inputParams = getInputParams(args);
         String reqId = getReqId(args);
+        setUpContext(reqId);
         log.info("Invoke service detail:[methodName:{}][input:{}][reqId:{}]",
                 methodName, inputParams, reqId);
         long t = System.currentTimeMillis();
@@ -31,6 +33,7 @@ public class LogFilter {
         String returnResult = getReturnResult(result);
         log.info("Invoke service detail:[methodName:{}][input:{}][reqId:{}][result:{}][cost:{}]",
                 methodName, inputParams, reqId, returnResult, cost);
+        cleanUpContext();
         return result;
     }
 
@@ -55,10 +58,18 @@ public class LogFilter {
         return null;
     }
 
+    private void setUpContext(String reqId) {
+        MDC.put("reqId", reqId);
+    }
+
     private String getReturnResult(Object result) {
         if (result instanceof BaseResponse) {
             return JSON.toJSONString(result);
         }
         return result != null ? result.toString() : "null";
+    }
+
+    private void cleanUpContext() {
+        MDC.clear();
     }
 }
