@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class BaseResponse {
-    @JSONField(serialize=false)
+    @JSONField(serialize = false)
     private String reqId;
 }

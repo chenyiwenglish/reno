@@ -62,7 +62,7 @@ public class CacheAspect {
         if (arguments == null) {
             return key;
         }
-        for (int i = 0; i < parameterAnnotations.length; i ++) {
+        for (int i = 0; i < parameterAnnotations.length; i++) {
             Annotation[] annotations = parameterAnnotations[i];
             if (annotations == null) {
                 continue;
@@ -83,7 +83,7 @@ public class CacheAspect {
 
     private boolean isKey(Annotation[] annotations) {
         boolean isKey = false;
-        for (Annotation annotation: annotations) {
+        for (Annotation annotation : annotations) {
             if (annotation instanceof CacheKey) {
                 isKey = true;
                 break;
