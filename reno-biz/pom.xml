@@ -20,6 +20,10 @@
             <groupId>com.chenyiwenglish</groupId>
             <artifactId>reno-dal</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.chenyiwenglish</groupId>
+            <artifactId>reno-common</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
