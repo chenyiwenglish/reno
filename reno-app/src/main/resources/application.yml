@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/reno
+    url: jdbc:mysql://localhost:3306/reno?autoReconnect=true
     username: root
     password: 123123
 
